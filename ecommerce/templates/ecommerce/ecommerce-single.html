@@ -1,0 +1,159 @@
+{% include 'snippets/header.html' %}
+{% load static%}
+ <!-- w3l-features-photo-7 -->
+ <section class="w3l-features-photo-7">
+	<div class="w3l-features-photo-7_sur">
+		<div class="wrapper">
+			<div class="w3l-features-photo-7_top">
+				<div class="w3l-features-photo-7_top-right">
+					<div class="galleryContainer"> 
+						<div class="gallery">
+							<input type="radio" name="controls" id="c1" checked><img class="galleryImage img-responsive" id="i1" src="{% static 'assets/images/a2.png' %}" class="img" alt="">
+							<input type="radio" name="controls" id="c2"><img class="galleryImage img-responsive" id="i2" src="{% static 'assets/images/a1.png' %}" class="img" alt="">
+							<input type="radio" name="controls" id="c3"><img class="galleryImage img-responsive" id="i3" src="{% static 'assets/images/a2.png' %}" class="img" alt="">
+							<input type="radio" name="controls" id="c4"><img class="galleryImage img-responsive" id="i4" src="{% static 'assets/images/a3.png' %}" class="img" alt="">
+							<input type="radio" name="controls" id="c5"><img class="galleryImage img-responsive" id="i5" src="{% static 'assets/images/a1.png' %}" class="img" alt="">
+						</div>
+						<div class="thumbnails">
+							<label class="thumbnailImage" for="c1"><img src="{% static 'assets/images/a2.png' %}" class="img" alt=""></label>
+							<label class="thumbnailImage" for="c2"><img src="{% static 'assets/images/a1.png' %}" class="img" alt=""></label>
+							<label class="thumbnailImage" for="c3"><img src="{% static 'assets/images/a2.png' %}" class="img" alt=""></label>
+							<label class="thumbnailImage" for="c4"><img src="{% static 'assets/images/a3.png' %}" class="img" alt=""></label>
+							<label class="thumbnailImage" for="c5"><img src="{% static 'assets/images/a1.png' %}" class="img" alt=""></label>
+						</div>
+					</div>
+				</div>
+				<div class="w3l-features-photo-7_top-left">
+					<div class="single-right-left simpleCart_shelfItem">
+						<h3>Global Corporation D12 set 4 chair and 1 table with glass</h3>
+						<ul class="rating">
+							<li><span class="fa fa-star"></span></li>
+							<li><span class="fa fa-star"></span></li>
+							<li><span class="fa fa-star"></span></li>
+							<li><span class="fa fa-star"></span></li>
+							<li><span class="fa fa-star-o"></span></li>
+							<li class="">(4.0 out of 5) | 37 customer reviews</li>
+						</ul> 
+						<p>Price : 
+							<span class="item_price">$1265.00</span>
+							<del>$1765.00</del>
+							<label>Free delivery</label>
+						</p>
+						<div class="single-infoagile">
+							<ul>
+								<li>
+									Cash on Delivery Not Eligible.
+								</li>
+								<li>
+									Delivery within 7 - 10 business days.
+								</li>
+								<li>
+									Sold by <a href="#indoro">Hindoro Enterprises</a> (4.5 out of 5 | 95,027 ratings).
+								</li>
+							</ul>
+						</div>
+						<div class="quantity">
+							<div class="quantity-select d-flex">
+								<h5 class="quantity">Quantity</h5>
+								<div class="entry value-minus">&nbsp;</div>
+								<div class="entry value">
+									<span>1</span>
+								</div>
+								<div class="entry value-plus active">&nbsp;</div>
+							</div>
+						</div>
+						<div class="product-single-w3l">
+							<h5>Description</h5>
+							<p>Global Corporation D12 set 4 chair and 1 table with glass is best for outdoor furniture for terrace, or you can use it for garden furniture,
+								wicker furniture, cane furniture and etc.
+							</p>
+							<ul>
+								<li>
+									Outdoor furniture for terrace 
+								</li>
+								<li>
+									Garden furniture 
+								</li>
+								<li>
+									Wicker furniture 
+								</li>
+							</ul>
+						</div>
+						<a href="#cart" class="actionbg">Add to cart </a>
+						<a href="#buy" class="actionbg1">Buy Now </a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //w3l-features-photo-7 -->
+
+
+<!-- js -->
+<script src="assets/js/jquery-3.3.1.min.js"></script> <!-- jquery latest version 3.4.1 -->
+
+<!--quantity-->
+<script>
+		$('.value-plus').on('click', function () {
+			var divUpd = $(this).parent().find('.value'),
+				newVal = parseInt(divUpd.text(), 10) + 1;
+			divUpd.text(newVal);
+		});
+
+		$('.value-minus').on('click', function () {
+			var divUpd = $(this).parent().find('.value'),
+				newVal = parseInt(divUpd.text(), 10) - 1;
+			if (newVal >= 1) divUpd.text(newVal);
+		});
+	</script>
+<!--//quantity-->
+
+
+
+<!-- products -->
+<section class="w3l-products-1">
+	<div class="products1">
+		<div class="section-title text-center">
+			<h3>Related products</h3>
+		</div>
+		<div class="wrapper">
+			<div class="products1-content">
+				<div class="column">
+					<a href="{% url 'ecommerce:ecommerce-single' %}"><img src="{% static 'assets/images/a2.png' %}" class="img-responsive" alt="" /></a>
+					<h4><a href="{% url 'ecommerce:ecommerce-single' %}">wooden chair</a></h4>
+					<p>Starting at $45,99</p>
+					<a href="{% url 'ecommerce:ecommerce-cart' %}" class="actionbg">Add to cart</a>
+				</div>
+				<div class="column">
+					<a href="{% url 'ecommerce:ecommerce-single' %}"><img src="{% static 'assets/images/a3.png' %}" class="img-responsive" alt="" /></a>
+					<h4><a href="{% url 'ecommerce:ecommerce-single' %}">round table</a></h4>
+					<p>Starting at $40,99</p>
+					<a href="{% url 'ecommerce:ecommerce-cart' %}" class="actionbg">Add to cart</a>
+				</div>
+				<div class="column">
+					<a href="{% url 'ecommerce:ecommerce-single' %}"><img src="{% static 'assets/images/a1.png' %}" class="img-responsive" alt="" /></a>
+					<h4><a href="{% url 'ecommerce:ecommerce-single' %}">global chair</a></h4>
+					<p>Starting at $24,99</p>
+					<a href="{% url 'ecommerce:ecommerce-cart' %}" class="actionbg">Add to cart</a>
+				</div>
+				<div class="column">
+					<a href="{% url 'ecommerce:ecommerce-single' %}"><img src="{% static 'assets/images/a2.png' %}" class="img-responsive" alt="" /></a>
+					<h4><a href="{% url 'ecommerce:ecommerce-single' %}">wooden chair</a></h4>
+					<p>Starting at $19,99</p>
+					<a href="{% url 'ecommerce:ecommerce-cart' %}" class="actionbg">Add to cart</a>
+				</div>
+				<div class="column">
+					<a href="{% url 'ecommerce:ecommerce-single' %}"><img src="{% static 'assets/images/a3.png' %}" class="img-responsive" alt="" /></a>
+					<h4><a href="{% url 'ecommerce:ecommerce-single' %}">round table</a></h4>
+					<p>Starting at $39,99</p>
+					<a href="{% url 'ecommerce:ecommerce-cart' %}" class="actionbg">Add to cart</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //products1 -->
+
+{% include 'main/snippets/footer.html' %}
+{% include 'main/snippets/move_top.html' %}

@@ -1,0 +1,147 @@
+{% include 'snippets/header.html' %}
+{% load static %}
+<style>
+	.actionbg {
+    border: none;
+    display: inline-block;
+    font-size: 14px;
+    color: #F5F9FC;
+    background: #00aeff;
+    padding: 10px 10px;
+    text-align: center;
+    border-radius: 10px !important; }
+  .actionbg:hover {
+    background: #009de6; }
+</style>
+<!-- title 11 -->
+<section class="w3l-title-11-blog">
+	<div class="title11">
+		<div class="wrapper">
+			<div class="title11-content">
+				<h2>Blog Single</h2>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //title 11 -->
+
+<!-- text11 -->
+<section class="w3l-text-11">
+	<div class="text11">
+		<div class="wrapper">
+			<div class="text11-content">
+				<a href="#living" class="tag">Living room</a>
+				<h6>August 17th</h6>
+				<h4 class="heading-no-margin">Large Collection Of Living Room Furniture</h4>
+				
+				<h1>{{post.title}}</h1>
+				<img src="{{post.imageURL}}" alt="blogposts" width="80%" height="auto" /></a>
+				
+				<p>{{post.body | safe }} </p>
+				<h5>Posted on-{{post.date_published}}-by-{{post.author}} </h5>
+				<!--<img src="{% static 'assets/images/services-single.jpg' %}" class="img-responsive margin-top" alt="" />
+				<p>Fusce faucibus ante vitae justo efficitur elementum. Donec ipsum faucibus arcu elementum, luctus justo. ac purus semper. Fusce faucibus ante vitae justo efficitur elementum. Donec ipsum faucibus arcu elementum, luctus justo. ac purus semper. Fusce faucibus ante vitae justo efficitur elementum. Donec ipsum faucibus arcu elementum, luctus justo. ac purus semper.</p>-->
+				<p>Fusce faucibus ante vitae justo efficitur elementum. Donec ipsum faucibus arcu elementum, luctus justo. ac purus semper. Fusce faucibus ante vitae justo efficitur elementum. Donec ipsum faucibus arcu elementum, luctus justo. ac purus semper."</p>
+				<h5 class="quote">"Fusce faucibus ante vitae justo efficitur elementum. Donec ipsum faucibus arcu elementum.</h5>
+				<p>Fusce faucibus ante vitae justo efficitur elementum. Donec ipsum faucibus arcu elementum, luctus justo. ac purus semper. Fusce faucibus ante vitae justo efficitur elementum. Donec ipsum faucibus. Donec ipsum faucibus arcu elementum.</p>
+				<ul class="blog-list">
+					<li>1. Fusce faucibus ante vitae justo efficitur elementum. Donec ipsum faucibus arcu elementum</li>
+					<li>2. Donec ipsum faucibus arcu elementum, luctus justo. ac purus semper. Donec ipsum faucibus arcu elementum, luctus justo. ac purus semper.</li>
+				</ul>
+				<div class="social-share-blog">
+					<h4 class="heading-no-margin">Share this post :</h4>
+					<ul class="social">
+						<li><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+						<li><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+						<li><a href="#google"><span class="fa fa-google-plus"></span></a></li>
+						<li><a href="#linkedin"><span class="fa fa-linkedin"></span></a></li>
+					</ul>
+				</div>
+				<div class="comments">
+					<h3 class="aside-title ">{{ comments.count }}  Recent Comments</h3>
+					<div class="comments-grids">
+						<div class="media-grid">
+							
+							<div class="media">
+								<!--<a class="" href="#"><img src="{% static 'assets/images/customer1.jpg' %}" class="img-responsive" width="60px" alt="placeholder image"></a>-->
+								{% for comment in comments %}
+								<div class="media-body comments-grid-right">
+									<h5> {{ comment.name }},</br></h5>
+									<ul class="">
+										<li class="font-weight-bold">{{ comment.created_on }}
+											<i>|</i>
+										</li>
+										<li>
+											<a href="#admin" class="font-weight-bold">Reply by Admin: </a><b> {{comment.reply}}</b>
+										</li>
+									</ul>
+									
+								</div>
+								<div class="clear"></div>
+								<p>{{ comment.body | linebreaks }}</p>
+										
+								{% endfor %}
+							</div>							
+						</div>
+						
+						<!--<div class="media-grid">
+							<div class="media">
+							<a class="" href="#"><img src="{% static 'assets/images/customer2.jpg' %}" class="img-responsive" width="60px" alt="placeholder image"></a>
+							<div class="media-body comments-grid-right">
+								<h5>Charlie</h5>
+								<ul class="">
+									<li class="font-weight-bold">4 mins ago
+										<i>|</i>
+									</li>
+									<li>
+										<a href="#comment" class="font-weight-bold">Reply</a>
+									</li>
+								</ul>
+							</div>
+							<div class="clear"></div>
+							</div>
+							<p>Mattis ut hendrerit non, facilisis eget mauris. Sed ultricies nec purus quis	tempor. Phasellus ipsum bibendum eu nec purus quis tempor. Donec ipsum faucibus arcu elementum, luctus justo. purus semper elementum purus quis tempor facilisis eget mauris.</p>
+						</div>-->
+					</div>
+				</div>
+				{% if new_comment %}
+        		<div class="alert alert-success" role="alert">
+         		 Your comment is awaiting moderation
+        		</div>
+        		{% else %}
+				<div class="leave-comment-form" id="comment">
+					<h3 class="aside-title">Leave a comment</h3>
+					<form  method="post">
+						{{comment_form.as_p}}
+						{% csrf_token %}
+
+						<div class="submit text-right">
+						<button type="submit" class="actionbg">Add Comment</button>
+						
+						</div>
+						<!--<div class="input-grids">
+							<div class="form-group">
+								<input type="text" name="Name" class="form-control" placeholder="Name" required="">
+							</div>
+							<div class="form-group">
+								<input type="email" name="Email" class="form-control" placeholder="Email" required="">
+							</div>
+						</div>
+						<div class="form-group">
+							<textarea name="Message" class="form-control" placeholder="Your reply..." required=""></textarea>
+						</div>
+						<div class="submit text-right">
+							
+							<a href="#" class="actionbg">Add Comment</a>
+						</div>-->
+					</form>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+{% include 'main/snippets/footer.html' %}
+{% include 'main/snippets/move_top.html' %}

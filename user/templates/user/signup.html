@@ -1,0 +1,46 @@
+{% include 'main/snippets/base.html' %}
+{% load static %}
+<section class="w3l-form-36">
+  <div class="form-36-mian">
+    <div class="wrapper">
+      <div class="form-inner-cont">
+        <h3>Signup here</h3> 
+          <form method="POST" action="">
+            {% csrf_token %}
+                                  
+       <!-- <form action="/" method="post" class="signin-form">{% csrf_token %}-->
+          <div class="form-input">
+            <span class="fa fa-user"></span>{{form.username}}<!-- <input type="text" name="" placeholder="user Name" required />-->
+          </div>
+          <div class="form-input">
+            <span class="fa fa-envelope"></span>{{form.email}} <!--<input type="email" name="" placeholder="Email" required />-->
+          </div>
+          <!--<div class="form-input">
+            <span class="fa fa-phone"></span><input type="text" name="" placeholder="Phone Number" required />
+          </div>-->
+          <div class="form-input">
+            <span class="fa fa-lock"></span> {{form.password1}}<!-- <input type="password" name="" placeholder="Password"
+              required />-->
+          </div>
+          <div class="form-input">
+            <span class="fa fa-lock"></span> {{form.password2}}<!-- <input type="password" name="" placeholder="Password"
+              required />-->
+          </div>
+          <div class="checkmark-gap">
+            <label class="container">
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <p class="remember">You agree to our <a href="#">terms and conditions</a></p>
+          </div>
+          <button class="btn">Sign  up</button>
+        </form>
+        <!--{% for message in messages %}
+        <p id="messages">{{message}}</p>
+      {% endfor %}-->
+        {{form.errors}}
+        <p class="signup">Already have an account ? <a href="{% url 'login'%}" class="loginlink">login</a></p>
+      </div>
+    </div>
+  </div>
+</section>

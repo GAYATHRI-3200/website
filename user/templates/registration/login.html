@@ -1,0 +1,42 @@
+{% include 'main/snippets/base.html' %}
+{% load static %}
+<section class="w3l-form-36">
+	<div class="form-36-mian">
+		<div class="wrapper">
+			<div class="form-inner-cont">
+				<h3>Login to continue</h3>
+				<form method="POST" action="">
+					{% csrf_token %}
+			    <div class="form-input">
+            <span class="fa fa-user"></span>{{form.username}}<!-- <input type="text" name="" placeholder="user Name" required />-->
+          </div>
+          <div class="form-input">
+            <span class="fa fa-lock"></span> {{form.password}}<!-- <input type="password" name="" placeholder="Password"
+              required />-->
+          </div>
+	
+					<button class="btn">Login</button>
+					<div class="new-signup">
+						<a href="#" class="signuplink">Forgot password?</a>
+
+					</div>
+				</form>
+				<div class="social-icons">
+					<p class="continue">or continue with
+					</p>
+					<a href="#">
+						<div class="facebook">
+							<span class="fa fa-facebook"></span> Facebook
+						</div>
+					</a>
+					<a href="#">
+						<div class="twitter">
+							<span class="fa fa-google"></span>Google
+						</div>
+					</a>
+				</div>
+				<p class="signup">Don’t have an account ? <a href="{% url 'signup'%}" class="signuplink">Sign up</a></p>
+			</div>
+		</div>
+	</div>
+</section>

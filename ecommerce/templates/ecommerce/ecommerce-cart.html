@@ -1,0 +1,160 @@
+{% include 'snippets/header.html' %}
+{% load static%}
+<!-- cart page -->
+<div class="w3l-cart-page-1">
+	<div class="wrapper">
+		<div class="checkout-right">
+			<div class="section-title-cart text-center">
+				<h3>Your Shopping Cart</h3>
+			</div>
+			<div class="table-responsive">
+				<table class="timetable_sub">
+					<thead>
+						<tr>
+							<th>Product</th>
+							<th>Product Name</th>
+							<th>Quantity</th>
+							<th>Price</th>
+							<th>Remove</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="rem1">
+							<td class="invert-image">
+								<a href="{% url 'ecommerce:ecommerce-single' %}">
+									<img src="{% static 'assets/images/a1.png' %}" alt=" " class="img-responsive" width="100px" />
+								</a>
+							</td>
+							<td class="invert product-name"><a href="{% url 'ecommerce:ecommerce-single' %}">Global Corporation D12 set 4 chair and 1 table with glass</a> <span>In stock</span> <li>Sold by <a href="#cloudtail">Cloudtail India</a></li></td>
+							<td class="invert">
+								<div class="quantity">
+									<div class="quantity-select d-flex">
+										<div class="entry value-minus">&nbsp;</div>
+										<div class="entry value">
+											<span>1</span>
+										</div>
+										<div class="entry value-plus active">&nbsp;</div>
+									</div>
+								</div>
+							</td>
+							<td class="invert price">$134.00</td>
+							<td class="invert close">
+								<div class="rem">
+									<div class="close1">Delete </div>
+								</div>
+							</td>
+						</tr>
+						<tr class="rem2">
+							<td class="invert-image">
+								<a href="{% url 'ecommerce:ecommerce-single' %}">
+                                    <img src="{% static 'assets/images/a2.png' %}" alt=" " class="img-responsive" width="100px" />
+								</a>
+							</td>
+							<td class="invert product-name"><a href="{% url 'ecommerce:ecommerce-single' %}">Global Corporation D12 set 4 chair and 1 table with glass</a> <span>In stock</span> <li>Sold by <a href="#trueREVO">TrueRevo</a></li></td>
+							<td class="invert">
+								<div class="quantity">
+									<div class="quantity-select d-flex">
+										<div class="entry value-minus">&nbsp;</div>
+										<div class="entry value">
+											<span>1</span>
+										</div>
+										<div class="entry value-plus active">&nbsp;</div>
+									</div>
+								</div>
+							</td>
+							<td class="invert price">$108.00</td>
+							<td class="invert close">
+								<div class="rem">
+									<div class="close2">Delete </div>
+								</div>
+							</td>
+						</tr>
+						<tr class="rem3">
+							<td class="invert-image">
+								<a href="{% url 'ecommerce:ecommerce-single' %}">
+                                    <img src="{% static 'assets/images/a3.png' %}" alt=" " class="img-responsive" width="100px" />
+								</a>
+							</td>
+							<td class="invert product-name"><a href="{% url 'ecommerce:ecommerce-single' %}">Global Corporation D12 set 4 chair and 1 table with glass</a> <span>In stock</span> <li>Sold by <a href="#iShoppe">iShoppe</a></li></td>
+							<td class="invert">
+								<div class="quantity">
+									<div class="quantity-select d-flex">
+										<div class="entry value-minus">&nbsp;</div>
+										<div class="entry value">
+											<span>1</span>
+										</div>
+										<div class="entry value-plus active">&nbsp;</div>
+									</div>
+								</div>
+							</td>
+							<td class="invert price">$99.00</td>
+							<td class="invert close">
+								<div class="rem">
+									<div class="close3 remove-product">Delete </div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td><h5 class="mt-3">Subtotal :</h5></td>
+							<td class="invert price">
+								 <strong>$341.00</strong>
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="checkout-left">
+			<div class="address_form_agile">
+				<div class="checkout-right-basket">
+					<a href="{% url 'ecommerce:ecommerce' %}" class="shop mr-md-2 ">Shop More
+					</a>
+					<a href="{% url 'login'%}" class="proceed">Place Order
+					</a>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!-- //cart page -->
+
+
+<!-- js -->
+<script src="assets/js/jquery-3.3.1.min.js"></script> <!-- jquery latest version 3.4.1 -->
+
+<!--quantity-->
+<script>
+	$('.value-plus').on('click', function () {
+		var divUpd = $(this).parent().find('.value'),
+			newVal = parseInt(divUpd.text(), 10) + 1;
+		divUpd.text(newVal);
+	});
+
+	$('.value-minus').on('click', function () {
+		var divUpd = $(this).parent().find('.value'),
+			newVal = parseInt(divUpd.text(), 10) - 1;
+		if (newVal >= 1) divUpd.text(newVal);
+	});
+</script>
+<!--//quantity-->
+	
+<!-- close script -->
+<script>
+	var closebtns = document.getElementsByClassName("close");
+	var i;
+
+	for (i = 0; i < closebtns.length; i++) {
+		closebtns[i].addEventListener("click", function () {
+			this.parentElement.style.display = 'none';
+		});
+	}
+</script>
+<!-- //close script -->
+    
+{% include 'main/snippets/footer.html' %}
+{% include 'main/snippets/move_top.html' %}
+

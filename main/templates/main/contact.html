@@ -1,0 +1,56 @@
+{% include 'snippets/header.html' %}
+{% load static %}
+
+    <section class="w3l-contact-hny-6">
+       <!-- /contact -->
+          <div class="contact-section">
+			   <div class="">
+			     <div class="map-fo">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.27404345275!2d-118.69191921441556!3d34.02016130939095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos+Angeles%2C+CA%2C+USA!5e0!3m2!1sen!2sin!4v1522474296007" allowfullscreen=""></iframe>
+					
+					{% if confirmation %}
+						<p>{{ confirmation }}</p>
+					{% endif %}
+
+					{% if form %}
+					<form method="POST" class="contact-form" action="">
+            		{% csrf_token %}
+					<!--
+				 	<form action="#" class="contact-form" method="post">
+				 		{% csrf_token %}-->
+					      <h5>contact us</h5>					      
+						  <p>We want to hear from you</p>
+						  	
+							<input type="text" name="text" placeholder="User Name" required="">
+							<input type="email" name="email" placeholder="Email Id" required="">
+							<textarea  placeholder="Your message" required=""></textarea>				
+							<button type="submit"class="btn submit">Submit</button>
+					{% endif %}
+					</form>
+				 </div>
+				 <div class="contact-info-ad">
+		            <div class="wrapper">
+					     <div class="grid">
+							    <div class="adress-lavi-info">
+									<h3>Locate Us</h3>
+									<p><span class="fa fa-map-marker"></span> Living Decor , #32841 block, Foundation of interior living decor designs,  USA. </p>
+								</div>
+								<div class="adress-lavi-info">
+									<h3>Reach us at</h3>
+									<p><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span> +(21)-255-999-8888</a></p>
+									<p><a href="mailto:interior@customer-support.com" class="mail"><span class="fa fa-envelope-open-o"></span>  interior@customer-support.com</a></p>
+									<p><a href="mailto:mail@company.com" class="mail"><span class="fa fa-envelope-open-o"></span>  mail@company.com</a></p>
+								</div>
+							</div>
+								
+					    </div>
+					 </div>
+                 </div>
+			   </div>
+           </div>
+        </div>
+		</section>
+       <!-- //contact -->
+
+{% include 'main/snippets/footer.html' %}
+{% include 'main/snippets/move_top.html' %}

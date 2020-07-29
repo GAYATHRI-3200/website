@@ -1,0 +1,58 @@
+{% include 'snippets/header.html' %}
+{% load static %}
+<!-- title 11 -->
+<section class="w3l-title-11-blog">
+	<div class="title11">
+		<div class="wrapper">
+			<div class="title11-content">
+				<h2>
+					Interior Designs Blog
+					</h2>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //title 11 -->
+
+ <div class="w3l-grids-block-5">
+ <!-- grids block 5 -->
+ <section id="grids5-block">
+	<div class="wrapper">
+			<div class="d-grid">
+				{% for data in post %}
+				<div class="grids5-info">
+					
+         			<a href="{% url 'blog:blog-single' slug=data.Slug %}"><img src="{{data.imageURL}}" alt="blogposts" width="auto" height="auto" /></a>
+					<h1>{{data.title}}</h1></a>
+					<h5>Posted on-{{data.date_published}}-by-{{data.author}}--{{data.date_updated}} </h5>
+						<ul class="blog-info">
+							<!--<li><a href="#admin"><span class="fa fa-user"></span> admin</a></li>
+							<li><a href="#comments"><span class="fa fa-comments"></span>3 comments</a></li>
+							<li><a href="#shares"><span class="fa fa-share"></span>3 shares</a></li>
+						</ul>-->
+					<h4><a href="{% url 'blog:blog-single' slug=data.Slug  %}">Multi-functional furniture to maximize space</a></h4>
+				</div>
+				{% endfor %}
+				
+				
+			</div>
+			<div class="pagination">
+				<ul>
+					<li class="prev"><a href="#page-number"><span class="fa fa-angle-double-left"></span></a></li>
+					<li><a href="#page-number" class="active">1</a></li>
+					<li><a href="#page-number">2</a></li>
+					<li><a href="#page-number">3</a></li>
+					<li><a href="#page-number">4</a></li>
+					<li><a href="#page-number">5</a></li>
+					<li class="next"><a href="#page-number"><span class="fa fa-angle-double-right"></span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- // grids block 5 -->
+
+
+
+{% include 'main/snippets/footer.html' %}
+{% include 'main/snippets/move_top.html' %}

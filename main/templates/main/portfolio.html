@@ -1,0 +1,34 @@
+{% include 'snippets/header.html' %}
+{% load static %}
+<!-- title 11 -->
+<section class="w3l-title-11-portfolio">
+	<div class="title11">
+		<div class="wrapper">
+			<div class="title11-content">
+				<h2>Our Portfolio</h2>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //title 11 -->
+
+	<section class="w3l-portfolio-2">
+		<div class="wrapper">
+			<div class="portfolio-main">
+				<div class="grid grid-column-3">
+					<a href="{% url 'main:portfolio-single' %}"><img src="{% static 'assets/images/p1.jpg' %}" class="port img-responsive" /></a>
+					<a href="{% url 'main:portfolio-single' %}"><img src="{% static 'assets/images/p2.jpg' %}" class="port img-responsive" /></a>
+					<a href="{% url 'main:portfolio-single' %}"><img src="{% static 'assets/images/p3.jpg' %}" class="port img-responsive" /></a>
+					<a href="{% url 'main:portfolio-single' %}"><img src="{% static 'assets/images/p4.jpg' %}" class="port img-responsive" /></a>
+					<a href="{% url 'main:portfolio-single' %}"><img src="{% static 'assets/images/p5.jpg' %}" class="port img-responsive" /></a>
+					<a href="{% url 'main:portfolio-single' %}"><img src="{% static 'assets/images/p6.jpg' %}" class="port img-responsive" /></a>
+					<a href="{% url 'main:portfolio-single' %}"><img src="{% static 'assets/images/p7.jpg' %}" class="port img-responsive" /></a>
+					<a href="{% url 'main:portfolio-single' %}"><img src="{% static 'assets/images/p8.jpg' %}" class="port img-responsive" /></a>
+					<a href="{% url 'main:portfolio-single' %}"><img src="{% static 'assets/images/p9.jpg' %}" class="port img-responsive" /></a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% include 'main/snippets/footer.html' %}
+{% include 'main/snippets/move_top.html' %}
